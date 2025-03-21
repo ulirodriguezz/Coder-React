@@ -12,13 +12,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-#named-logo{
-  display: flex;
-  flex-direction: row;
-}
-#logo{
-  height: 50%;
-}
 
 a {
   font-weight: 500;

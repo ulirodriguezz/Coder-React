@@ -1,0 +1,22 @@
+#loadingIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+  }
+  #loadingIcon img{
+    height: 50px;
+    animation: rotate 1s linear infinite;
+    object-fit: contain;
+  
+  }
+  @keyframes rotate {
+    from{
+      transform: rotate(0deg);
+    }
+    to{
+      transform: rotate(360deg);
+    }
+    
+  }
