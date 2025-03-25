@@ -2,10 +2,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 20px;
-    width: 350px;
-    height: 400px;
+    justify-content: space-around;
+    padding: 0 20px 0 20px;
+    width: 300px;
+    height: 500px;
     border-radius: 20px;
     background-color:#504b7b;
     /* background: linear-gradient(to bottom right,rgb(149, 149, 149),rgb(24, 25, 24)); */
@@ -21,7 +21,7 @@
 }
 .itemCard:hover{
     transform: scale(1.05);
-    margin: 0 10px 0 10px;
+
     
 }
 .itemCard:hover h3{
@@ -35,3 +35,31 @@
 .itemCard p::-webkit-scrollbar {
     display: none; 
   }
+.purchaseDiv{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    width: 80%;
+    flex-wrap: wrap;
+    height: 45px;
+}
+.purchaseDiv h5{
+    color: #969bfc;
+}
+
+.purchaseDiv button{
+    height: 80%;
+    display: flex;
+    align-items: center;
+    background-color: #747bff;
+}
+.purchaseDiv button:hover{
+    background-color: #969bfc;
+    transition: 0.2s;
+}
+.categoryDiv{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
