@@ -1,8 +1,7 @@
 import { useEffect } from 'react'
 import styles from '../styles/itemCard.module.css'
 import DiscountedPrice from './DiscountedPrice'
-function ItemCard ({item,onClick,buttonOnclick}){
-    console.log(item)
+function ItemCard ({item,onClick =()=>{},buttonOnclick=()=>{}}){
     const createTagsString = () =>{
         let tagArray = ''
         for(let i = 0; i< item.tags.length; i++){
