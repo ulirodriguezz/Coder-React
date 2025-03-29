@@ -58,7 +58,7 @@
     background-color: #969bfc;
     transition: 0.2s;
 }
-.categoryDiv{
+.tagsDiv{
     display: flex;
     align-content: center;
     justify-content: center;

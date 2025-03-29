@@ -4,14 +4,14 @@ export default function DiscountedPrice({originalPrice,discountedPrice}){
         return(
             <div className={styles.discuountedPriceDiv}>
                 <h5>Sale!! <span>${originalPrice}</span></h5>
-                <h4>${discountedPrice}</h4>
+                <h2>${discountedPrice}</h2>
             </div>
         )
     }
     else{
         return(
             <div className={styles.discuountedPriceDiv}>
-                <h4>${discountedPrice}</h4>
+                <h2>${discountedPrice}</h2>
             </div>
         )
     }

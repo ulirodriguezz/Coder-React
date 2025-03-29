@@ -23,10 +23,10 @@ function Navbar(){
             <Link to={'/'}>
                 <div className='named-logo'>
                     <img className="logo" src="../src/assets/Logo.png" alt="Logo todo futbol" />
-                    <h1>Todo fútbol</h1>
+                    <h1>URcommerce</h1>
                 </div>
             </Link>
-            <Dropdown name={'Categorías'} onChange={navigateToCategory}>
+            <Dropdown name={'Categorías'} onChange={navigateToCategory} label={'Categorías'}>
                 {categoryList.map((categName)=>(
                     <DropdwonItem value={categName} key={categName}>
                          {categName}

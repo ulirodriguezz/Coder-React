@@ -15,7 +15,7 @@
 .discuountedPriceDiv h5 span{
     text-decoration: line-through;
 }
-.discuountedPriceDiv h4{
+.discuountedPriceDiv h2{
     margin: 0;
     padding: 0;
 }

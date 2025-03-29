@@ -17,8 +17,9 @@
 }
 .contentTitle{
     font-weight: bold;
+    margin-bottom: 0;
 }
-.imageAndButtonDiv{
+.mainDiv{
     display: flex;
     width: 100%;
     height: 500px;
@@ -36,7 +37,27 @@
 }
 .purchaseButton{
     width: 100%;
+    background-color:#6B70EA;
+    transition: 0.4s;
+    
+}
+.purchaseButton:hover{
+    opacity: 0.8;
+    color: white;
+    
 }
 .infoText{
     color: rgb(189, 187, 187);
+}
+.categorySpan{
+    color: rgb(189, 187, 187);
+}
+.title{
+    margin-bottom: 0;
+}
+.infoDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }

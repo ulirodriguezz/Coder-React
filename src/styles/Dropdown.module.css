@@ -16,3 +16,6 @@ select::-webkit-scrollbar {
 select option{
     color: white;
 }
+select option:hover{
+    box-shadow: 0 0 10px 100px #bbc2c5 inset;
+}

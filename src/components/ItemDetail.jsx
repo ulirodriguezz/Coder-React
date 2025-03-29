@@ -6,19 +6,26 @@ import styles from '../styles/ItemDetail.module.css'
 function ItemDetail ({item}){
     return( 
         <section className={styles.itemDetailSection}>
-            <h2>{item.title}</h2>
-            <div className={styles.imageAndButtonDiv}>
+            <h2 className={styles.title}>{item.title}</h2>
+            <span className={styles.categorySpan}>{item.category}</span>
+            <div className={styles.mainDiv}>
                 <img className={styles.itemImage}src={item.thumbnail} alt="Imagen del producto" />
                 <div className={styles.purchaseDiv}>
-                    <span>Rating: {item.rating}</span>
+                    <span className={styles.infoText}>Rating: {item.rating}</span>
                     <h1>${(item.price *((1-item.discountPercentage/100))).toFixed(2)}</h1>
-                    <p>Agrega este producto a tu carrito</p>
+                    <p>Agregá este producto a tu carrito</p>
                     <button className={styles.purchaseButton}>Agregar al carrito</button>
+                    
                 </div>
             </div>
-            <h3 className={styles.contentTitle}>Informacion del producto</h3>
-            <h3 className={styles.contentTitle}>Descripcion</h3>
-            <p className={styles.infoText}>{item.description}</p>
+            <div className={styles.infoDiv}>
+                <h3 className={styles.contentTitle}>Información del producto</h3>
+                <span className={styles.infoText}>&bull; Marca: {item.brand}</span>
+                <span className={styles.infoText}>&bull; Peso: {item.weight}g</span>
+                <h3 className={styles.contentTitle}>Descripción</h3>
+                <p className={styles.infoText}>{item.description}</p>
+            </div>
+            
 
         </section>
     )
