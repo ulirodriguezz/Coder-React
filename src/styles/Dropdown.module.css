@@ -1,0 +1,18 @@
+select{
+    background-color:#6B70EA;
+    height: 50px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    padding-right: 10px;
+    font-size: 20px;
+    align-self: center;
+}
+select::-webkit-scrollbar {
+    display: none;
+}
+
+
+select option{
+    color: white;
+}

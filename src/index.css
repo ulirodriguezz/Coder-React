@@ -1,3 +1,4 @@
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -51,8 +52,8 @@ button {
 button:hover {
   border-color: #646cff;
 }
-button:focus,
-button:focus-visible {
+:focus,
+:focus-visible {
   outline: none;
 }
 #root{
@@ -61,6 +62,10 @@ button:focus-visible {
   padding: 0px;
   margin: 0px;
 }
+
+
+
+
 
 
 @media (prefers-color-scheme: light) {

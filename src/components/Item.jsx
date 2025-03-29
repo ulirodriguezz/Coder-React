@@ -17,7 +17,7 @@ function ItemCard ({item,onClick =()=>{},buttonOnclick=()=>{}}){
             <p>{item.description}</p>
             <div className={styles.purchaseDiv}>
                 <button onClick={buttonOnclick}>Agregar</button>
-                <DiscountedPrice price={item.price} discountedPrice={(item.price*(100-item.discountPercentage)/100).toFixed(2)}></DiscountedPrice>
+                <DiscountedPrice originalPrice={item.price} discountedPrice={(item.price*(100-item.discountPercentage)/100).toFixed(2)}></DiscountedPrice>
             </div>
             <div className={styles.categoryDiv}>
                 <p>{createTagsString()}</p>

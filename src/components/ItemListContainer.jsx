@@ -1,20 +1,24 @@
 import { useEffect, useState } from "react";
 import styles from '../styles/ItemListContainer.module.css'
-import ItemListRenderer from "./ItemListRenderer";
+import ItemList from "./ItemList";
 import LoadingRenderProps from "./common/LoadingRenderProps";
-import { Link } from "react-router";
+import { useParams } from "react-router";
 function ItemListcontainer(){
     const [productArray,setProductArray] = useState([])
-    const [fetchError,setFetchError] = useState(null)
+    const {categName} = useParams()
     useEffect(()=>{
         setTimeout(()=>{
-            fetch('https://dummyjson.com/products/')
+            //Simula retraso de red
+             const allProductsURL = 'https://dummyjson.com/products';
+             const productsByCategoryURL = `https://dummyjson.com/products/category/${categName}`
+            fetch(categName? productsByCategoryURL:allProductsURL)
             .then(res => res.json())
             .then(data => setProductArray(data.products))
             .catch(e => console.log('Hay que manejar este error'));
-        },1000 * 3)
-    },[]);
+        },1000 * 1)
+    },[categName]);
     function handleClick(){
+        //Si no hago nada con esto lo borro
         console.log('Logica al hacer click')
     }
 
@@ -23,7 +27,7 @@ function ItemListcontainer(){
     return(
         <LoadingRenderProps data={productArray}>
             <div className={styles.itemListContainer}>
-                <ItemListRenderer itemList={productArray} onItemClick={handleClick}></ItemListRenderer>
+                <ItemList itemList={productArray} onItemClick={handleClick}></ItemList>
             </div>
         </LoadingRenderProps>
     )

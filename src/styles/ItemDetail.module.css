@@ -1,0 +1,42 @@
+.itemDetailSection{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    justify-self: center;
+    background-color: #302764;
+    border-radius: 10px;
+}
+
+.itemImage{
+    width: 500px;
+    height: 500px;
+    object-fit: contain;
+}
+.contentTitle{
+    font-weight: bold;
+}
+.imageAndButtonDiv{
+    display: flex;
+    width: 100%;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+.purchaseDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: 80%;
+}
+.purchaseButton{
+    width: 100%;
+}
+.infoText{
+    color: rgb(189, 187, 187);
+}

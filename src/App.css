@@ -45,7 +45,7 @@ h1,h2,h3,h4,p{
   transform: scale(1.1);
 }
 #cart-bubble{
-  background-color: orange;
+  background-color: #2eb0d1;
   border-radius: 50%;
   position: absolute;
   top: 12px;
