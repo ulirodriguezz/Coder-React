@@ -1,9 +1,14 @@
+import { IoCartOutline } from "react-icons/io5";
+import { IconContext } from "react-icons";
+import styles from '../styles/CartWidget.module.css'
 function CartWidget(){
     return(
         <div id="cart-widget">
-            <h4 id="cart-icon">🛒</h4>
+            <IconContext.Provider value={{size:'3em',color:"white"}}>
+                <IoCartOutline />
+            </IconContext.Provider>
             {/* Poría incluir el numero como una prop */}
-            <span id="cart-bubble">1</span>
+            <span className={styles.cartBubble}>1</span>
         </div>
     );
 }

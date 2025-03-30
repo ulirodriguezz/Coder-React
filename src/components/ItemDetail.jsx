@@ -1,8 +1,6 @@
-import { useParams } from "react-router"
-import ItemCard from "./Item"
-import LoadingRenderProps from "./common/LoadingRenderProps"
-import { useEffect, useState } from "react"
+
 import styles from '../styles/ItemDetail.module.css'
+import ItemCount from './ItemCount'
 function ItemDetail ({item}){
     return( 
         <section className={styles.itemDetailSection}>
@@ -14,7 +12,7 @@ function ItemDetail ({item}){
                     <span className={styles.infoText}>Rating: {item.rating}</span>
                     <h1>${(item.price *((1-item.discountPercentage/100))).toFixed(2)}</h1>
                     <p>Agregá este producto a tu carrito</p>
-                    <button className={styles.purchaseButton}>Agregar al carrito</button>
+                    <ItemCount text={'Agregar al carrito'}/>
                     
                 </div>
             </div>

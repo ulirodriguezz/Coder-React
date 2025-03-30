@@ -1,0 +1,11 @@
+.purchaseButton{
+    width: 100%;
+    background-color:#6B70EA;
+    transition: 0.4s;
+    
+}
+.purchaseButton:hover{
+    opacity: 0.8;
+    color: white;
+    
+}
