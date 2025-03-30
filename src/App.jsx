@@ -14,7 +14,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route  path='/' element={<ItemListcontainer/>}/>
-        <Route  path='/*' element={<h1>No encontramos la pagina</h1>}/>
+        <Route  path='/*' element={<h1 style={{textAlign:'center'}}>{'UPS :('}<br/>{'No encontramos la página'}</h1>}/>
         <Route exact path='/products/:id' element={<ItemDetailContainer/>}/>
         <Route  path='/products/category/:categName' element={<ItemListcontainer/>}/>
       </Routes>
