@@ -3,6 +3,8 @@ import styles from '../styles/itemCard.module.css'
 import DiscountedPrice from './DiscountedPrice'
 function ItemCard ({item,onClick =()=>{},buttonOnclick=(e)=>{e.stopPropagation()}}){
     const createTagsString = () =>{
+        //Esta funcion crea un string para los tags del producto
+        // Por ejemplo: 'beauty • fashion'
         let tagArray = ''
         for(let i = 0; i< item.tags.length; i++){
             tagArray = tagArray + item.tags[i]+' • ';
@@ -19,7 +21,7 @@ function ItemCard ({item,onClick =()=>{},buttonOnclick=(e)=>{e.stopPropagation()
                 <button onClick={(e)=>{e.preventDefault();}}>Agregar</button>
                 <DiscountedPrice originalPrice={item.price} discountedPrice={(item.price*(100-item.discountPercentage)/100).toFixed(2)}></DiscountedPrice>
             </div>
-            <div className={styles.categoryDiv}>
+            <div className={styles.tagsDiv}>
                 <p>{createTagsString()}</p>
             </div>
         </article>
