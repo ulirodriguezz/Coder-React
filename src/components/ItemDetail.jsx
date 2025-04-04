@@ -1,5 +1,7 @@
 
 import styles from '../styles/ItemDetail.module.css'
+import CartProvider from './context/CartProvider'
+
 import ItemCount from './ItemCount'
 function ItemDetail ({item}){
     return( 
@@ -12,7 +14,8 @@ function ItemDetail ({item}){
                     <span className={styles.infoText}>Rating: {item.rating}</span>
                     <h1>${(item.price *((1-item.discountPercentage/100))).toFixed(2)}</h1>
                     <p>Agregá este producto a tu carrito</p>
-                    <ItemCount text={'Agregar al carrito'}/>
+                    <ItemCount text={'Agregar al carrito'} item={item}/>
+                   
                     
                 </div>
             </div>

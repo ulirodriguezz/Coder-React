@@ -1,6 +1,7 @@
-#cart-widget{
+.cartWidget{
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 0;
     margin: 0;
   }
@@ -17,7 +18,7 @@
     background-color: #FA7F17;
     border-radius: 50%;
     position: relative;
-    top: -24px;
+    top: -28px;
     right: +32px;
     font-size: 1rem;
     padding: 1px 6px 1px 6px;
