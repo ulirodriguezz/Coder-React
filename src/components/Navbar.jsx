@@ -2,17 +2,21 @@ import "../App.css"
 import CartWidget from "./CartWidget.jsx";
 import Dropdown from "./common/Dropdown.jsx";
 import DropdwonItem from "./common/DropdownItem.jsx";
-import { useEffect, useState } from "react";
+import {useState,useEffect } from "react";
 import { useNavigate } from "react-router";
 import { Link } from "react-router";
+import CartProvider from "./context/CartProvider.jsx";
+
 function Navbar(){
     const [categoryList,setCategoryList] = useState([]);
     let navigate = useNavigate();
+
     useEffect(()=>{
         fetch('https://dummyjson.com/products/category-list')
         .then(res => res.json())
         .then(data=>setCategoryList(data));
     },[]);
+    
     function navigateToCategory(e){
          const URL = `products/category/${e.currentTarget.value}`
          console.log(URL)

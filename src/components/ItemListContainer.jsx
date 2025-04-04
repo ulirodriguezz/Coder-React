@@ -15,7 +15,7 @@ function ItemListcontainer(){
             .then(res => res.json())
             .then(data => setProductArray(data.products))
             .catch(e => console.log('Hay que manejar este error'));
-        },1000 * 0)
+        },1000 * 1)
     },[categName]);
     function handleClick(){
         //Si no hago nada con esto lo borro

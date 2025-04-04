@@ -1,14 +1,12 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import styles from '../styles/ItemCount.module.css'
+import CartContext from "./context/CartContext";
 
-function ItemCount ({text}){
+function ItemCount ({text,item}){
+    const {addProductToCart} = useContext(CartContext)
     const[count,setCount] = useState(0);
     function handleClick(e){
-        //Dependiendo de como haga la implementacion de agregar al carrito
-        //probablemente tenga que mover esta logica al componente padre del ItemCount
-        setCount(count + 1);
-        //Por ahora solo hago un console.log
-        console.log(count)     
+        addProductToCart(item,1);
     }
     return( 
         <button className={styles.purchaseButton} onClick={handleClick}>{text}</button>
