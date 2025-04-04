@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import styles from '../styles/itemCard.module.css'
+import styles from '../styles/ItemCard.module.css'
 import DiscountedPrice from './DiscountedPrice'
 function ItemCard ({item,onClick =()=>{},buttonOnclick=(e)=>{e.stopPropagation()}}){
     const createTagsString = () =>{
