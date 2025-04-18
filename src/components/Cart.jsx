@@ -1,7 +1,8 @@
 import { useContext } from 'react'
 import styles from '../styles/CartDetail.module.css'
-import CartProductCard from './CartProductCard'
+import CartProductCard from './CartItem'
 import CartContext from './context/CartContext'
+import { Link } from 'react-router'
 function CartDetail (){
     const {cart} = useContext(CartContext);
     const calculateTotalCartPrice=()=>{
@@ -34,7 +35,8 @@ function CartDetail (){
             </div>
             <div className={styles.confirmCartDiv}>
                 <h1>Total: ${calculateTotalCartPrice()}</h1>
-                <button>Confirmar Carrito</button>
+                <button><Link to={'/checkout'}>Confirmar Carrito</Link></button>
+            
             </div>
         </section>
     )

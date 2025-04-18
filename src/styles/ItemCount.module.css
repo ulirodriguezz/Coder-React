@@ -2,10 +2,38 @@
     width: 100%;
     background-color:#6B70EA;
     transition: 0.4s;
+    padding: 0;
+    margin: 0;
+    border-radius: 0px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
     
 }
-.purchaseButton:hover{
+.purchaseButton:hover, .minusButton:hover,
+.plusButton:hover{
     opacity: 0.8;
     color: white;
     
+}
+.itemCountDiv{
+    display: flex;
+}
+.quantityButtonsDiv{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+.plusButton, .minusButton{
+    height: 50%;
+    width: 100%;
+    border-radius: 0px;
+    padding: 0;
+    background-color: #8a8de9;
+}
+.plusButton{
+    border-top-right-radius: 10px;
+}
+.minusButton{
+    border-top: 1px solid grey;
+    border-bottom-right-radius: 10px;
 }

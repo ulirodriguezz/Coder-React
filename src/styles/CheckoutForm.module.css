@@ -1,0 +1,23 @@
+.checkoutForm{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    width: 800px;
+    height: auto;
+    background-color: rgb(135, 191, 239);
+    align-self: center;
+    justify-self: center;
+    border-radius: 20px;
+    padding: 20px;
+}
+.checkoutLabel{
+    margin-bottom: 5px;
+}
+.checkoutInput{
+    background:transparent;
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 30px;
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
