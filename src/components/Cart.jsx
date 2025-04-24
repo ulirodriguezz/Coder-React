@@ -1,8 +1,9 @@
 import { useContext } from 'react'
 import styles from '../styles/CartDetail.module.css'
-import CartProductCard from './CartItem'
+import CarItem from './CartItem'
 import CartContext from './context/CartContext'
 import { Link } from 'react-router'
+import Swal from 'sweetalert2'
 function CartDetail (){
     const {cart} = useContext(CartContext);
     const calculateTotalCartPrice=()=>{
@@ -12,6 +13,18 @@ function CartDetail (){
         });
         return(total.toFixed(2))
     }
+    const handleConfirm = (e)=>{
+        //Valido que el carrito no este vacio para pasar a la compra
+        if(cart.length == 0){
+            e.preventDefault();
+            Swal.fire({
+                title:'El carrito está vacío',
+                text:'Agregá productos para seguir con tu compra',
+                icon:'warning',
+                confirmButtonText:'Entendido'
+            })
+        }
+    }
     return( 
         <section className={styles.cartDetailSection}>
             <div className={styles.sectionHeaderDiv}>
@@ -20,7 +33,7 @@ function CartDetail (){
             <div className={styles.cartListingDiv}>
                 
                 { cart.length >0? cart.map(prod => (
-                    <CartProductCard key={prod.id} styles={styles} product={prod}/>)
+                    <CarItem key={prod.id} styles={styles} product={prod}/>)
                 )
                 :
                 <h2 style={{textAlign:'center'}}>El carrito esta vacio</h2>
@@ -35,7 +48,7 @@ function CartDetail (){
             </div>
             <div className={styles.confirmCartDiv}>
                 <h1>Total: ${calculateTotalCartPrice()}</h1>
-                <button><Link to={'/checkout'}>Confirmar Carrito</Link></button>
+                <button><Link to={'/checkout'} onClick={handleConfirm}>Confirmar Carrito</Link></button>
             
             </div>
         </section>

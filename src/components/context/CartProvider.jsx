@@ -27,13 +27,14 @@ function CartProvider ({children}){
         setCartSize(prevSize => prevSize - product.quantity)
     }
     const substractProductQuantityBy1 = (product)=>{
-        if(cart.some(prod => prod.id == product.id)){
-            let updatedCart = cart;
-            let existingPoructIndex = updatedCart.findIndex(prod => prod.id == product.id);
+    
+        let updatedCart = cart;
+        let existingPoructIndex = updatedCart.findIndex(prod => prod.id == product.id);
+        if( updatedCart[existingPoructIndex].quantity != 1){
             updatedCart[existingPoructIndex].quantity -= 1;
             setCart(updatedCart);
             setCartSize(prevSize => prevSize - 1)
-        }
+        }     
     }
     return( 
         <CartContext.Provider value={{cart,setCart,addProductToCart,cartSize,removeProduct,substractProductQuantityBy1}}>

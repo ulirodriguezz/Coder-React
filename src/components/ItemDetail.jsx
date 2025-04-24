@@ -22,7 +22,7 @@ function ItemDetail ({item}){
             <div className={styles.infoDiv}>
                 <h3 className={styles.contentTitle}>Información del producto</h3>
                 <span className={styles.infoText}>&bull; Marca: {item.brand}</span>
-                <span className={styles.infoText}>&bull; Peso: {item.weight}g</span>
+                <span className={styles.infoText}>&bull; Peso: {item.weight}</span>
                 <h3 className={styles.contentTitle}>Descripción</h3>
                 <p className={styles.infoText}>{item.description}</p>
             </div>

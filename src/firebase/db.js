@@ -1,6 +1,7 @@
 
 import { initializeApp } from "firebase/app";
-import { collection, doc, getDoc, getDocs, getFirestore, query, where } from "firebase/firestore";
+import { addDoc, collection, doc, getDoc, getDocs, getFirestore, query, where } from "firebase/firestore";
+import Swal from "sweetalert2";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -54,5 +55,19 @@ export const getItemByID = async (id)=>{
 
     if(docSnapshot.exists()){
         return docSnapshot.data()
+    }
+}
+export const savePurchase = async (purchase)=>{
+    const purchaseCollectionRef = collection(db,'purchases');
+    try{
+        const docRef = await addDoc(purchaseCollectionRef,purchase)
+        Swal.fire({
+            title:'Se guardo tu orden de compra',
+            text: 'Id de compra: '+docRef.id,
+            icon:'success',
+            confirmButtonText: 'Ok'
+        })
+    }catch(e) {
+        alert('Algun error')
     }
 }
