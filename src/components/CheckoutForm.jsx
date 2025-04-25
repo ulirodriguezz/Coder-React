@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
 import { useEffect } from "react";
 function CheckoutForm(){
-    const {cart} = useContext(CartContext);
+    const {cart,emptyCart} = useContext(CartContext);
     let navigate = useNavigate();
     const handleSubmit = (e)=>{
         const errorAlet =(errorMsj)=>{
@@ -38,14 +38,20 @@ function CheckoutForm(){
             products:cart
         }
         savePurchase(purchase); 
+        emptyCart();
     }
 
     useEffect(()=>{
+        //No permite que el se acceda a este componente si el carrito esta vacio
+        //En caso que se intente acceder directamnte a la URL (/checkout)
         if(cart.length == 0){
             navigate('/')
         }
-    },[]);
+    },[cart]);
+
     return(
+        //Podria poder esto en otro componente para separarlo de la logica 
+        // pero no esta contemplado en la entrega, por lo tanto no lo hago.
         <form className={styles.checkoutForm} action="submit" onSubmit={handleSubmit}>
             <label className={styles.checkoutLabel} htmlFor="name">Nombre:</label>
             <input className={styles.checkoutInput} type="text" name="name" id="nameInput" placeholder="Ingresá tu nombre" defaultValue={'Ulises'}/>
@@ -53,7 +59,7 @@ function CheckoutForm(){
             <input className={styles.checkoutInput} type="email" name="email" id="emailInput" placeholder="Ingresá tu email" defaultValue={'ulirodrigueze@gmail.com'} />
             <label className={styles.checkoutLabel} htmlFor="phone">Telefono:</label>
             <input className={styles.checkoutInput} type="number" name="phone" id="phoneInput" placeholder="Ingresá tu numero de telefono" defaultValue={1130150582}/>
-            <button type="submit">Confirmar Compra</button>
+            <button className={styles.submitButton} type="submit">Confirmar Compra</button>
         </form>
     )
 }

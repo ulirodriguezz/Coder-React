@@ -36,8 +36,12 @@ function CartProvider ({children}){
             setCartSize(prevSize => prevSize - 1)
         }     
     }
+    const emptyCart = () =>{
+        setCart([]);
+        setCartSize(0);
+    }
     return( 
-        <CartContext.Provider value={{cart,setCart,addProductToCart,cartSize,removeProduct,substractProductQuantityBy1}}>
+        <CartContext.Provider value={{cart,setCart,addProductToCart,cartSize,removeProduct,substractProductQuantityBy1,emptyCart}}>
             {children}
         </CartContext.Provider>
     )

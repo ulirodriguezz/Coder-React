@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import CartContext from "./context/CartContext"
+import Swal from "sweetalert2";
 function CartProductCard ({product,styles}){
     const {addProductToCart,substractProductQuantityBy1,removeProduct} = useContext(CartContext)
     const handleAdd = ()=>{
@@ -9,7 +10,22 @@ function CartProductCard ({product,styles}){
         substractProductQuantityBy1(product)
     }
     const handleRemove = () =>{
-        removeProduct(product)
+        Swal.fire(
+            {
+                title:'¿Estás seguro?',
+                text:'Se eliminará el producto del carrito',
+                icon:'warning',
+                confirmButtonText:'Eliminar',
+                showCancelButton:true,
+                cancelButtonText:'Cancelar'
+            }
+        ).then(result =>{
+            if(result.isConfirmed){
+                removeProduct(product)
+            }
+        })
+        
+        
     }
     return( 
         <article className={styles.productCard}> 
