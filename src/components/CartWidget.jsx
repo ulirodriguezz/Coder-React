@@ -13,8 +13,6 @@ function CartWidget() {
                     <IoCartOutline />
                 </IconContext.Provider>
             </Link>
-
-            {/* Poría incluir el numero como una prop */}
             <span className={styles.cartBubble} style={{ visibility: cart.length == 0 ? 'hidden' : 'visible' }}>{cartSize}</span>
         </div>
     );

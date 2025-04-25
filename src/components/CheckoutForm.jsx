@@ -42,7 +42,7 @@ function CheckoutForm() {
     }
 
     useEffect(() => {
-        //No permite que el se acceda a este componente si el carrito esta vacio
+        //No permite que se acceda a este componente si el carrito esta vacio
         //En caso que se intente acceder directamnte a la URL (/checkout)
         if (cart.length == 0) {
             navigate('/')

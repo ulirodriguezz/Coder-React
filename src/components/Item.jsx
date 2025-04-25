@@ -1,9 +1,9 @@
-import { useContext, useEffect } from 'react'
+import { useContext} from 'react'
 import styles from '../styles/ItemCard.module.css'
 import DiscountedPrice from './DiscountedPrice'
 import CartContext from './context/CartContext'
 import { toast } from 'react-toastify'
-function ItemCard({ item, onClick = () => { }, buttonOnclick = (e) => { e.stopPropagation() } }) {
+function ItemCard({ item}) {
     const { addProductToCart } = useContext(CartContext);
     const createTagsString = () => {
         //Esta funcion crea un string para los tags del producto
@@ -32,7 +32,7 @@ function ItemCard({ item, onClick = () => { }, buttonOnclick = (e) => { e.stopPr
 
     }
     return (
-        <article className={styles.itemCard} onClick={onClick}>
+        <article className={styles.itemCard}>
             <img src={item.thumbnail} alt="Foto de producto" />
             <h3>{item.title}</h3>
             <p>{item.description}</p>

@@ -7,9 +7,6 @@ function ItemDetailContainer() {
     const { id } = useParams()
     const [item, setItem] = useState(null)
     useEffect(() => {
-        // fetch(`https://dummyjson.com/products/${id}`)
-        // .then(response => response.json())
-        // .then(data => setItem(data))
         getItemByID(id)
             .then(data => setItem(data))
     }, []);

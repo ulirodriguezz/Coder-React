@@ -8,12 +8,6 @@ function ItemListcontainer() {
     const [productArray, setProductArray] = useState([])
     const { categName } = useParams()
     useEffect(() => {
-        // const allProductsURL = 'https://dummyjson.com/products';
-        // const productsByCategoryURL = `https://dummyjson.com/products/category/${categName}`
-        // fetch(categName? productsByCategoryURL:allProductsURL)
-        // .then(res => res.json())
-        // .then(data => setProductArray(data.products))
-        // .catch(e => console.log('Hay que manejar este error'));
         if (categName != undefined) {
             getItemsByCategory(categName)
                 .then(data => setProductArray(data))
@@ -23,17 +17,12 @@ function ItemListcontainer() {
         }
 
     }, [categName]);
-    function handleClick() {
-        //Si no hago nada con esto lo borro
-        console.log('Logica al hacer click')
-    }
-
 
 
     return (
         <LoadingRenderProps data={productArray}>
             <div className={styles.itemListContainer}>
-                <ItemList itemList={productArray} onItemClick={handleClick}></ItemList>
+                <ItemList itemList={productArray}></ItemList>
             </div>
         </LoadingRenderProps>
     )
