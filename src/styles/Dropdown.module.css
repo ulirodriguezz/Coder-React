@@ -1,6 +1,7 @@
-select{
-    background-color:#6B70EA;
+select {
+    background-color: #6B70EA;
     height: 50px;
+    width: 200px;
     border-radius: 5px;
     text-align: center;
     color: white;
@@ -8,14 +9,16 @@ select{
     font-size: 20px;
     align-self: center;
 }
+
 select::-webkit-scrollbar {
     display: none;
 }
 
 
-select option{
+select option {
     color: white;
 }
-select option:hover{
+
+select option:hover {
     box-shadow: 0 0 10px 100px #bbc2c5 inset;
 }

@@ -17,6 +17,8 @@
 }
 .itemCountDiv{
     display: flex;
+    width: 100%;
+    margin-bottom: 10px;
 }
 .quantityButtonsDiv{
     display: flex;
@@ -28,12 +30,14 @@
     width: 100%;
     border-radius: 0px;
     padding: 0;
-    background-color: #8a8de9;
+    background-color: #6B70EA;
+    border-left: 1px solid black;
+
 }
 .plusButton{
     border-top-right-radius: 10px;
 }
 .minusButton{
-    border-top: 1px solid grey;
+    border-top: 1px solid black;
     border-bottom-right-radius: 10px;
 }

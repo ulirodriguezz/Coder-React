@@ -1,8 +1,10 @@
 import { useState } from "react"
 import CartContext from "./CartContext"
+import { toast } from "react-toastify"
 function CartProvider ({children}){
     const[cart,setCart] = useState([])
     const [cartSize,setCartSize] = useState(0)
+
     const addProductToCart = (product,quantity)=>{
         console.log('adding...')
         console.log(product)
@@ -22,10 +24,12 @@ function CartProvider ({children}){
             setCartSize(prevSize => prevSize + quantity)
         }
     }
+
     const removeProduct = (product) =>{
         setCart(prevCart => (prevCart.filter(p=>p.id != product.id)))
         setCartSize(prevSize => prevSize - product.quantity)
     }
+
     const substractProductQuantityBy1 = (product)=>{
     
         let updatedCart = cart;
@@ -34,12 +38,25 @@ function CartProvider ({children}){
             updatedCart[existingPoructIndex].quantity -= 1;
             setCart(updatedCart);
             setCartSize(prevSize => prevSize - 1)
-        }     
+        }else{
+             toast('❌ No podés bajar más', {
+                    position: "bottom-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: false,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                });
+            }
     }
+
     const emptyCart = () =>{
         setCart([]);
         setCartSize(0);
     }
+
     return( 
         <CartContext.Provider value={{cart,setCart,addProductToCart,cartSize,removeProduct,substractProductQuantityBy1,emptyCart}}>
             {children}

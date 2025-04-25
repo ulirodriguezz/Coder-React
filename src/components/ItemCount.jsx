@@ -1,6 +1,7 @@
 import { useContext, useState } from "react"
 import styles from '../styles/ItemCount.module.css'
 import CartContext from "./context/CartContext";
+import { ToastContainer, toast } from 'react-toastify';
 
 function ItemCount ({text,item}){
     const {addProductToCart} = useContext(CartContext)
@@ -13,7 +14,16 @@ function ItemCount ({text,item}){
     }
     function handleMinus(){
         if(count == 1){
-            alert('No se puede')
+            toast('❌ No podés bajar más', {
+                position: "bottom-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                });
             return
         }
         setCount(count - 1);
@@ -25,6 +35,7 @@ function ItemCount ({text,item}){
                 <div className={styles.quantityButtonsDiv}>
                     <button className={styles.plusButton} onClick={handlePlus}>+</button>
                     <button className={styles.minusButton} onClick={handleMinus}>-</button>
+                    <ToastContainer />
                 </div>
             </div>        
             <span style={{color:"white"}}>Cantidad: {count}</span>
