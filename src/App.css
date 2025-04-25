@@ -1,63 +1,56 @@
-body{
+body {
   background-color: #120E2B;
   padding: 0px 5px 0px 5px;
 }
-h1{
+
+h1 {
   font-size: 2rem;
 }
-h1,h2,h3,h4,p{
+
+h1,
+h2,
+h3,
+h4,
+p {
   color: rgb(239, 230, 230);
 }
-.navbar{
+
+.navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border-bottom: 2px solid grey;
-  padding: 0% 0% 0.5% 1%;
+  padding: 10px 0 0 10px;
+  position: relative;
 }
-.named-logo{
+
+.named-logo {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.logo{
-  height:50px;
-  width:50px;
+
+.logo {
+  height: 50px;
+  width: 50px;
   object-fit: contain;
   margin-right: 10px;
-  
+
 }
-.item-list-container{
+
+.item-list-container {
   min-height: 1000px;
   padding: 1%;
   display: flex;
   justify-content: center;
 }
-#cart-widget{
-  display: flex;
-  align-items: center;
-  padding: 0;
-  margin: 0;
+body::-webkit-scrollbar {
+  width: 10px;
 }
-#cart-icon{
-  font-size: 3rem;
-  margin: 0;
-  
+body::-webkit-scrollbar-track {
+  background: #120E2B /* El color de fondo de la pista */
 }
-#cart-icon:hover{
-  transition: 0.5s;
-  transform: scale(1.1);
-}
-#cart-bubble{
-  background-color: #FA7F17;
-  border-radius: 50%;
-  position: relative;
-  top: -20px;
-  right: +47px;
-  font-size: 1rem;
-  padding: 2px 6px 2px 6px;
-  text-align: center;
-  color: black;
-  font-weight: bold;
-  line-height: 1rem;
+body::-webkit-scrollbar-thumb {
+  background: #797985;
+  border-radius: 10px;
 }

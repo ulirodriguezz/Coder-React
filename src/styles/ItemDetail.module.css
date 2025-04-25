@@ -1,4 +1,4 @@
-.itemDetailSection{
+.itemDetailSection {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -10,54 +10,61 @@
     border-radius: 10px;
 }
 
-.itemImage{
-    width: 500px;
-    height: 500px;
+.itemImage {
+    width: 50%;
+    height: 100%;
     object-fit: contain;
 }
-.contentTitle{
+
+.contentTitle {
     font-weight: bold;
     margin-bottom: 0;
 }
-.mainDiv{
+
+.mainDiv {
     display: flex;
     width: 100%;
     height: 500px;
     align-items: center;
     justify-content: center;
-    gap: 5%;
+    
 }
-.purchaseDiv{
+
+.purchaseDiv {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 20%;
+    width: 35%;
     height: 80%;
 }
-.purchaseButton{
-    width: 100%;
-    background-color:#6B70EA;
-    transition: 0.4s;
-    
-}
-.purchaseButton:hover{
-    opacity: 0.8;
-    color: white;
-    
-}
-.infoText{
+
+.infoText {
     color: rgb(189, 187, 187);
 }
-.categorySpan{
+
+.categorySpan {
     color: rgb(189, 187, 187);
 }
-.title{
+
+.title {
     margin-bottom: 0;
 }
-.infoDiv{
+
+.infoDiv {
+    border-top: 1px solid grey;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    width: 100%;
+    padding-left: 5%;
+    margin-top: 5%;
+    box-sizing: border-box;
+}
+@media (max-height: 980px) {
+    
+    .itemDetailSection{
+      margin-bottom: 100px;
+    }
 }
