@@ -1,7 +1,7 @@
 import { useContext, useState } from "react"
 import styles from '../styles/ItemCount.module.css'
 import CartContext from "./context/CartContext";
-
+import { toast } from "react-toastify";
 function ItemCount({ text, item }) {
     const { addProductToCart } = useContext(CartContext)
     const [count, setCount] = useState(1);
