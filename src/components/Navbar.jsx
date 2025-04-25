@@ -3,28 +3,25 @@ import { getAllCategoryNames } from "../firebase/db.js";
 import CartWidget from "./CartWidget.jsx";
 import Dropdown from "./common/Dropdown.jsx";
 import DropdwonItem from "./common/DropdownItem.jsx";
-import {useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { Link } from "react-router";
 
-function Navbar(){
-    const [categoryList,setCategoryList] = useState([]);
+function Navbar() {
+    const [categoryList, setCategoryList] = useState([]);
     let navigate = useNavigate();
 
-    useEffect(()=>{
-        // fetch('https://dummyjson.com/products/category-list')
-        // .then(res => res.json())
-        // .then(data=>setCategoryList(data));
+    useEffect(() => {
         getAllCategoryNames()
-        .then(data =>setCategoryList(data))
-    },[]);
-    
-    function navigateToCategory(e){
-         const URL = `products/category/${e.currentTarget.value}`
-         console.log(URL)
-         navigate(URL)
+            .then(data => setCategoryList(data))
+    }, []);
+
+    function navigateToCategory(e) {
+        const URL = `products/category/${e.currentTarget.value}`
+        console.log(URL)
+        navigate(URL)
     }
-    return(
+    return (
         <header className="navbar">
             <Link to={'/'}>
                 <div className='named-logo'>
@@ -33,13 +30,14 @@ function Navbar(){
                 </div>
             </Link>
             <Dropdown name={'Categorías'} onChange={navigateToCategory} label={'Categorías'}>
-                {categoryList.map((categName)=>(
+                {categoryList.map((categName) => (
+
                     <DropdwonItem value={categName} key={categName}>
-                         {categName}
+                        {categName}
                     </DropdwonItem>
                 ))}
             </Dropdown>
-            <CartWidget/>
+            <CartWidget />
         </header>
     );
 }

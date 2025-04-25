@@ -8,6 +8,16 @@ select {
     padding-right: 10px;
     font-size: 20px;
     align-self: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 transparent;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+select:hover {
+    background-color: #5F64D3; /* tono un poco más oscuro */
+    box-shadow: 0 0 8px rgba(107, 112, 234, 0.4); /* glow sutil */
+    cursor: pointer;
 }
 
 select::-webkit-scrollbar {

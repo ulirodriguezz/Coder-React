@@ -1,4 +1,4 @@
-.checkoutForm{
+.checkoutForm {
     display: flex;
     flex-direction: column;
     margin-top: 30px;
@@ -10,12 +10,14 @@
     border-radius: 20px;
     padding: 30px 30px 60px 30px;
 }
-.checkoutLabel{
-    color:white;
+
+.checkoutLabel {
+    color: white;
     margin-bottom: 5px;
 }
-.checkoutInput{
-    background:transparent;
+
+.checkoutInput {
+    background: transparent;
     border: 1px solid grey;
     border-radius: 5px;
     height: 40px;
@@ -23,7 +25,8 @@
     margin-bottom: 15px;
     background-color: #9596ce;
 }
-.submitButton{
+
+.submitButton {
     margin-top: 60px;
     background-color: #8E94FF;
     color: #FFFFFF;
@@ -31,12 +34,14 @@
     box-shadow: 0 0 0 transparent;
     height: 40px;
 }
-.submitButton:hover{
-    background-color: #6C71ED; 
+
+.submitButton:hover {
+    background-color: #6C71ED;
     box-shadow: 0 0 10px rgba(140, 148, 255, 0.4);
     transform: scale(1.01);
 }
+
 button.submit:active {
     transform: scale(0.97);
     box-shadow: 0 0 6px rgba(140, 148, 255, 0.3) inset;
-  }
+}

@@ -1,4 +1,4 @@
-.itemListContainer{
+.itemListContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -7,8 +7,9 @@
     gap: 20px;
     row-gap: 30px;
     padding: 20px;
-    object-fit:cover;
+    object-fit: cover;
 }
-.errorTxt{
+
+.errorTxt {
     text-align: center;
 }

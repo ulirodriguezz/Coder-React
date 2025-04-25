@@ -1,64 +1,52 @@
 import { useState } from "react"
 import CartContext from "./CartContext"
-import { toast } from "react-toastify"
-function CartProvider ({children}){
-    const[cart,setCart] = useState([])
-    const [cartSize,setCartSize] = useState(0)
+function CartProvider({ children }) {
+    const [cart, setCart] = useState([])
+    const [cartSize, setCartSize] = useState(0)
 
-    const addProductToCart = (product,quantity)=>{
+    const addProductToCart = (product, quantity) => {
         console.log('adding...')
         console.log(product)
         //Si el producto ya estaba en el carrito aumento su cantidad
-        if(cart.some(prod => prod.id == product.id)){
+        if (cart.some(prod => prod.id == product.id)) {
             let updatedCart = cart;
             let existingPoructIndex = updatedCart.findIndex(prod => prod.id == product.id);
             updatedCart[existingPoructIndex].quantity += quantity;
             setCart(updatedCart);
             setCartSize(prevSize => prevSize + quantity)
             console.log(cart)
-        }else{
+        } else {
             console.log('Estoy tratando de cargar')
             product.quantity = quantity;
             console.log(product)
-            setCart([...cart,product]);
+            setCart([...cart, product]);
             setCartSize(prevSize => prevSize + quantity)
         }
     }
 
-    const removeProduct = (product) =>{
-        setCart(prevCart => (prevCart.filter(p=>p.id != product.id)))
+    const removeProduct = (product) => {
+        setCart(prevCart => (prevCart.filter(p => p.id != product.id)))
         setCartSize(prevSize => prevSize - product.quantity)
     }
 
-    const substractProductQuantityBy1 = (product)=>{
-    
+    const substractProductQuantityBy1 = (product) => {
+
         let updatedCart = cart;
         let existingPoructIndex = updatedCart.findIndex(prod => prod.id == product.id);
-        if( updatedCart[existingPoructIndex].quantity != 1){
+        if (updatedCart[existingPoructIndex].quantity != 1) {
             updatedCart[existingPoructIndex].quantity -= 1;
             setCart(updatedCart);
             setCartSize(prevSize => prevSize - 1)
-        }else{
-             toast('❌ No podés bajar más', {
-                    position: "bottom-right",
-                    autoClose: 2000,
-                    hideProgressBar: false,
-                    closeOnClick: false,
-                    pauseOnHover: false,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "dark",
-                });
-            }
+        }
     }
 
-    const emptyCart = () =>{
+    const emptyCart = () => {
         setCart([]);
         setCartSize(0);
     }
 
-    return( 
-        <CartContext.Provider value={{cart,setCart,addProductToCart,cartSize,removeProduct,substractProductQuantityBy1,emptyCart}}>
+    return (
+        <CartContext.Provider value={{ cart, setCart, addProductToCart, cartSize, removeProduct, substractProductQuantityBy1, emptyCart }}>
             {children}
         </CartContext.Provider>
     )

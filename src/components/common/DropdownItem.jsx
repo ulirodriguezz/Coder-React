@@ -1,5 +1,5 @@
-function DropdwonItem ({value}){
-    return( 
+function DropdwonItem({ value }) {
+    return (
         <option value={value}>{value}</option>
     )
 };

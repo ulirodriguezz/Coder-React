@@ -4,18 +4,18 @@ import styles from '../styles/CartWidget.module.css'
 import { useContext, useEffect } from "react";
 import CartContext from "./context/CartContext";
 import { Link } from "react-router";
-function CartWidget(){
-    const {cart,cartSize} = useContext(CartContext);
-    return(
+function CartWidget() {
+    const { cart, cartSize } = useContext(CartContext);
+    return (
         <div className={styles.cartWidget}>
             <Link to={'/cart'}>
-                <IconContext.Provider value={{size:'3em',color:"white"}}>
+                <IconContext.Provider value={{ size: '3em', color: "white" }}>
                     <IoCartOutline />
                 </IconContext.Provider>
             </Link>
-            
+
             {/* Poría incluir el numero como una prop */}
-            <span className={styles.cartBubble} style={{visibility: cart.length ==0? 'hidden': 'visible'}}>{cartSize}</span>
+            <span className={styles.cartBubble} style={{ visibility: cart.length == 0 ? 'hidden' : 'visible' }}>{cartSize}</span>
         </div>
     );
 }
