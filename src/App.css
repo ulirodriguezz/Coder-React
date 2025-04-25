@@ -44,3 +44,13 @@ p {
   display: flex;
   justify-content: center;
 }
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: #120E2B /* El color de fondo de la pista */
+}
+body::-webkit-scrollbar-thumb {
+  background: #797985;
+  border-radius: 10px;
+}

@@ -2,10 +2,11 @@ import { useContext } from 'react'
 import styles from '../styles/CartDetail.module.css'
 import CarItem from './CartItem'
 import CartContext from './context/CartContext'
-import { Link } from 'react-router'
+import { useNavigate } from 'react-router'
 import Swal from 'sweetalert2'
 function CartDetail() {
     const { cart } = useContext(CartContext);
+    const navigate = useNavigate();
     const calculateTotalCartPrice = () => {
         let total = 0;
         cart.forEach(prod => {
@@ -23,6 +24,8 @@ function CartDetail() {
                 icon: 'warning',
                 confirmButtonText: 'Entendido'
             })
+        }else{
+            navigate('/checkout')
         }
     }
     return (
@@ -43,12 +46,12 @@ function CartDetail() {
             <div className={styles.userInfoDiv}>
                 <h2>Información del usuario</h2>
                 <span>Nombre: Ulises <br /></span>
-                <span>Email: ulirodriguezegmail.com <br /></span>
+                <span>Email: ulirodrigueze@gmail.com <br /></span>
                 <span>Telefono: 1130150582 <br /></span>
             </div>
             <div className={styles.confirmCartDiv}>
                 <h1>Total: ${calculateTotalCartPrice()}</h1>
-                <button className={styles.confirmCartButton}><Link className={styles.navLink} to={'/checkout'} onClick={handleConfirm}>Confirmar Carrito</Link></button>
+                <button className={styles.confirmCartButton} onClick={handleConfirm}>Confirmar Carrito</button>
 
             </div>
         </section>

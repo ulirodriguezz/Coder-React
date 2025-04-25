@@ -16,6 +16,7 @@
 }
 
 .cartListingDiv {
+    padding: 10px 0 10px 0;
     grid-area: 2 / 1 / 6 / 4;
     overflow-y: scroll;
     background-color: #453c7c;
@@ -159,4 +160,17 @@
     background-color: #6C71ED;
     box-shadow: 0 0 10px rgba(140, 148, 255, 0.4);
     transform: scale(1.03);
+}
+
+@media (max-width: 2154px) {
+    
+    .cartDetailSection{
+      width: 75%;
+    }
+}
+@media (max-height: 980px) {
+    
+    .cartDetailSection{
+      margin-bottom: 100px;
+    }
 }

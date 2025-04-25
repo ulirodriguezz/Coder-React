@@ -25,6 +25,10 @@
     margin-bottom: 15px;
     background-color: #9596ce;
 }
+.checkoutInput::-webkit-inner-spin-button,
+.checkoutInput::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+}
 
 .submitButton {
     margin-top: 60px;
